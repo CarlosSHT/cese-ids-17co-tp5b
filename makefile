@@ -3,6 +3,7 @@ INC_DIR = ./inc
 OBJ_DIR = ./build/obj
 BIN_DIR = ./build
 
+
 SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 OBJ_FILES = $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRC_FILES))
 
@@ -16,7 +17,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 ###############################################################################
 # Creation of output folders
-build_folders: $(BIN_DIR) $(LIB_DIR) $(OBJ_DIR) $(DOC_DIR) $(DPN_DIR) $(RST_DIR)
+build_folders: $(BIN_DIR) $(LIB_DIR) $(OBJ_DIR) $(DOC_DIR) $(DPN_DIR) $(RST_DIR) 
 
 $(OUT_DIR):
 	@echo Creating output root folder
@@ -29,3 +30,7 @@ $(BIN_DIR): $(OUT_DIR)
 $(OBJ_DIR): $(OUT_DIR)
 	@echo Creating output objects folder
 	@mkdir $(OBJ_DIR)
+
+doc: 
+	@echo Creating output docs folder
+	@doxygen Doxyfile

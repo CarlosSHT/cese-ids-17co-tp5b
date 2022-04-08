@@ -34,6 +34,11 @@
 
 /*=====[Implementations of private functions]================================*/
 
+/**
+ * @brief Función principal que imprime las listas de alumnos declarados en 
+ * alumnos.c
+ * 
+ */
 int main(int argc, char *argv[]) {
     char cadena[2048];
 
